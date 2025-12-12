@@ -12,7 +12,7 @@
                         <div class="ml-10 flex items-baseline space-x-4">
                             <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-white/5 hover:text-white" -->
                             <x-nav-link href="/" :active="request()->Is('/')">Home</x-nav-link>
-                            <x-nav-link href="/blog" :active="request()->Is('blog')">Blog</x-nav-link>
+                            <x-nav-link href="/posts" :active="request()->Is('posts')">Blog</x-nav-link>
                             <x-nav-link href="/contact" :active="request()->Is('contact')">Contact</x-nav-link>
                             <x-nav-link href="/about" :active="request()->Is('about')">About</x-nav-link>
                             {{-- <a href="/"
@@ -88,14 +88,18 @@
         <el-disclosure id="mobile-menu" hidden class="block md:hidden">
             <div class="space-y-1 px-2 pt-2 pb-3 sm:px-3">
                 <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-white/5 hover:text-white" -->
-                <a href="/" aria-current="page"
+                {{-- <a href="/" aria-current="page"
                     class="block rounded-md bg-gray-900 px-3 py-2 text-base font-medium text-white">Home</a>
                 <a href="/blog"
                     class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-white/5 hover:text-white">Blog</a>
                 <a href="/contact"
                     class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-white/5 hover:text-white">Contact</a>
                 <a href="/about"
-                    class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-white/5 hover:text-white">About</a>
+                    class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-white/5 hover:text-white">About</a> --}}
+                <x-nav-link href="/" :active="request()->Is('/')">Home</x-nav-link>
+                <x-nav-link href="/posts" :active="request()->Is('posts')">Blog</x-nav-link>
+                <x-nav-link href="/contact" :active="request()->Is('contact')">Contact</x-nav-link>
+                <x-nav-link href="/about" :active="request()->Is('about')">About</x-nav-link>
             </div>
             <div class="border-t border-white/10 pt-4 pb-3">
                 <div class="flex items-center px-5">
