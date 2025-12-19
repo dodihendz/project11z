@@ -23,7 +23,7 @@ Route::get('/contact', function () {
     return view('contact', ["title" => "Contact"]);
 });
 
-Route::get('/posts/{slug}', function ($slug) {
+Route::get('/posts/{post:slug}', function (Post $post) {
     // dd($id); //debugging to see if the id is captured correctly
     // $posts = Post::all();
 
@@ -33,7 +33,7 @@ Route::get('/posts/{slug}', function ($slug) {
     //     return $post['slug'] == $slug;
     // });
 
-    $post = Post::find($slug);
+    // $post = Post::find($slug);
 
     // dd($post); //debugging data already ok or not
     return view('post', [
