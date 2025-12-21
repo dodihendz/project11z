@@ -14,7 +14,15 @@ return new class extends Migration
         Schema::create('posts', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->string('author');
+            // $table->string('author');
+            //using usually for foreign key
+            // $table->unsignedBigInteger('author_id'); 
+            // $table->foreign('author_id')->references('id')->on('users');
+            // using constraint for author_id
+            $table->foreignId('author_id')->constrained(
+                table: 'users',
+                indexName: 'posts_author_id'
+            );
             $table->string('slug')->unique();
             $table->text('body');
             $table->timestamps();
