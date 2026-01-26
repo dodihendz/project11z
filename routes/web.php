@@ -16,9 +16,14 @@ Route::get('/about', function () {
 
 Route::get('/posts', function () {
     // $postAll = Post::with(['author', 'category'])->latest()->get();
+    // dump(request('search'));
+    // $posts = Post::latest();
+    // if (request('search')) {
+    //     $posts->where('title', 'like', '%' . request('search') . '%')->get();
+    // } 
     return view('posts', [
         "title" => "Blog",
-        'posts' => Post::all()
+        'posts' => Post::search(request(['search', 'category', 'author']))->latest()->get(),
     ]);
 });
 
