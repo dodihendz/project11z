@@ -23,7 +23,9 @@ Route::get('/posts', function () {
     // } 
     return view('posts', [
         "title" => "Blog",
-        'posts' => Post::search(request(['search', 'category', 'author']))->latest()->get(),
+        // 'posts' => Post::search(request(['search', 'category', 'author']))->latest()->get(),
+        'posts' => Post::search(request(['search', 'category', 'author']))->latest()->paginate(5)->withQueryString(),
+        // 'posts' => Post::search(request(['search', 'category', 'author']))->latest()->simplepaginate(5),
     ]);
 });
 

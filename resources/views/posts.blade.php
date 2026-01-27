@@ -37,7 +37,6 @@
             </div>
         </div>
     </section>
-
     <div class="py-8 px-4 mx-auto max-w-7xl lg:py-8 lg:px-6">
         <div class="grid gap-8 lg:grid-cols-3 md:grid-cols-2">
             {{-- @foreach ($posts as $post) --}}
@@ -91,4 +90,5 @@
             @endforelse
         </div>
     </div>
+    {{ $posts->links() }}
 </x-layout>
